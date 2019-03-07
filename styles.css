@@ -1,0 +1,25 @@
+
+body {
+    background-color: #c5d7e1;
+}
+
+.navbar {
+    margin-bottom: 2em;
+    background-color: #ababad;
+}
+
+.card {
+    margin: 1.5em;
+    min-width: 12em;
+    max-width: 12em;
+}
+
+
+.card-img-top {
+    height: 17.5em;
+    width: 20em;
+}
+
+footer {
+    background-color: #ababad;
+}

@@ -9,10 +9,13 @@ body {
 }
 
 .card {
-    margin: 1.5em;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
     min-width: 12em;
     max-width: 12em;
 }
+
 
 
 .card-img-top {
@@ -27,3 +30,4 @@ footer {
 .card-deck {
     padding-bottom: 4em;
 }
+

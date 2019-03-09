@@ -35,7 +35,7 @@ var books = [
     {
         title: "Hitchhiker's Guide to the Galaxy",
         author: "Douglas Adams",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
         meetUpDate: "06/07/2013",
         meetUpLocation: "Heine Brothers"
@@ -107,7 +107,7 @@ var books = [
     {
         title: "The Moon is a Harsh Mistress",
         author: "Robert A. Heinlein",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/The_Moon_Is_A_Harsh_Mistress_%28book%29.jpg/220px-The_Moon_Is_A_Harsh_Mistress_%28book%29.jpg",
         meetUpDate: "01/25/2015",
         meetUpLocation: "Sister’s Tea Parlor"
@@ -211,7 +211,7 @@ var books = [
     {
         title: "Ready Player One",
         author: "Ernest Cline",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://upload.wikimedia.org/wikipedia/en/a/a4/Ready_Player_One_cover.jpg",
         meetUpDate: "08/24/2016",
         meetUpLocation: "Manny & Merle"
@@ -227,7 +227,7 @@ var books = [
     {
         title: "Trigger Warning: Short Fictions and Disturbances",
         author: "Neil Gaiman",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://images.gr-assets.com/books/1415036119l/22522808.jpg",
         meetUpDate: "10/18/2016",
         meetUpLocation: "Gasthaus"
@@ -291,7 +291,7 @@ var books = [
     {
         title: "Warbreaker",
         author: "Brandon Sanderson",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://upload.wikimedia.org/wikipedia/en/a/a7/Warbreaker_cover.jpg",
         meetUpDate: "08/31/2017",
         meetUpLocation: "Chik'n & Mi"
@@ -315,7 +315,7 @@ var books = [
     {
         title: "Norse Mythology",
         author: "Neil Gaiman",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://images.gr-assets.com/books/1516128292l/37903770.jpg",
         meetUpDate: "02/01/2018",
         meetUpLocation: "Hilltop Tavern"
@@ -347,7 +347,7 @@ var books = [
     {
         title: "Dark Matter",
         author: "Blake Crouch",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://images.gr-assets.com/books/1472119680l/27833670.jpg",
         meetUpDate: "05/08/2018",
         meetUpLocation: "Butchertown Pizza Hall"
@@ -387,7 +387,7 @@ var books = [
     {
         title: "Children of Blood and Bone",
         author: "Tomi Adeyemi",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://images.gr-assets.com/books/1516127989l/34728667.jpg",
         meetUpDate: "10/09/2018",
         meetUpLocation: "Eiderdown"
@@ -427,10 +427,10 @@ var books = [
     {
         title: "Space Opera",
         author: "Catherynne M. Valente",
-        genre: "SciFi/Fantasy",
+        genre: "Sci-Fi/Fantasy",
         bookCover: "https://images.gr-assets.com/books/1518017807l/24100285.jpg",
         meetUpDate: "04/05/2019",
-        meetUpLocation: "New Wave Burritos"
+        meetUpLocation: "Come Back Inn"
     }
 
 ]
@@ -454,11 +454,11 @@ var books = [
                         '<img class="card-img-top img-fluid" src="' + book.bookCover + '" alt="' + book.title + '">' +
                         '<div class="card-body text-center">' +
                             '<h5>' + book.title + '</h5>' +
-                            '<p class="card-text">' + book.author + '</p>' +
+                            '<p class="card-text">' + 'By: ' + book.author + '</p>' +
                             '<p class="card-text">' + book.meetUpLocation + '</p>' +
                             // '<a data-toggle="modal" href="#' + name + 'Modal" class="card-link">Learn about ' + name + '</a>' +
                         '</div>' +
-                        '<div class="card-footer">' + book.meetUpDate + '</div>' +
+                        '<div class="card-footer text-center">' + book.meetUpDate + '</div>' +
                     '</div>';
             
             $('#bookCard').append(card);
@@ -468,7 +468,7 @@ var books = [
         createBookCards(books);
 
         // filters cards on the page based on button selection
-        $('button').click(function(){
+        $('.dropdown-item').click(function(){
             var bookGenre = $(this).text();
             if (bookGenre === "All"){
                 $('#bookCard').empty();

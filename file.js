@@ -472,12 +472,14 @@ var books = [
             var bookGenre = $(this).text();
             if (bookGenre === "All"){
                 $('#bookCard').empty();
+                $('.genreHeader').text("All Books");
                 createBookCards(books);
             } else {
                 var filteredBooks = books.filter(function (val){
                     return val.genre === bookGenre; 
                 })
                 $('#bookCard').empty();
+                $('.genreHeader').text(bookGenre);
                 createBookCards(filteredBooks);
             }; 
         

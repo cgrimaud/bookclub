@@ -8,14 +8,18 @@ body {
     background-color: #ababad;
 }
 
+.page-header {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
 .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px;
     min-width: 12em;
     max-width: 12em;
 }
-
 
 
 .card-img-top {
@@ -30,4 +34,6 @@ footer {
 .card-deck {
     padding-bottom: 4em;
 }
+
+
 

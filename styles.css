@@ -43,5 +43,10 @@ footer {
     padding-bottom: 4em;
 }
 
-
+/* @media(max-width: 765px) {
+    .card-body {
+        font-size: .5em
+    }
+    
+    } */
 

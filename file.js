@@ -464,9 +464,13 @@ var books = [
         $('#bookCard').append(card);
     }
 
+    function countBooks(book){
+        $('.genreBooksRead').text(book.length + " book");
+    }
+
     // All books appear on page when first loaded
     createBookCards(books);
-    $('.genreBooksRead').text(books.length + " books");
+    countBooks(books);
 
 
     // filters cards on the page based on button selection
@@ -475,7 +479,7 @@ var books = [
         if (bookGenre === "All"){
             $('#bookCard').empty();
             $('.genreHeader').text("All Books");
-            $('.genreBooksRead').text(books.length + " books");
+            countBooks(books);
             createBookCards(books);
         } else {
             var filteredBooks = books.filter(function (val){
@@ -483,7 +487,7 @@ var books = [
             })
             $('#bookCard').empty();
             $('.genreHeader').text(bookGenre);
-            $('.genreBooksRead').text(filteredBooks.length + " books");
+            countBooks(filteredBooks);
             createBookCards(filteredBooks);
         }; 
     

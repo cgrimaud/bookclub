@@ -31,6 +31,10 @@ p {
     width: 20em;
 }
 
+p.card-text {
+    font-size: 1em;
+}
+
 footer {
     background-color: #ababad;
 }

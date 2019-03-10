@@ -437,53 +437,61 @@ var books = [
     
 
 
-        // appends book array to #bookCard element in HTML
-        $('#bookCard').append(books);
+    // appends book array to #bookCard element in HTML
+    $('#bookCard').append(books);
 
-        // loops through book array, then calls buildBookCard function to create book cards
-        function createBookCards (listOfBooks){
-            listOfBooks.forEach(function(book){
-                buildBookCard(book);
-            });
-
-        };
-
-        // Creates card elements for bookcards 
-        function buildBookCard(book){
-            var card = '<div class="card border-dark mb-3">' + 
-                        '<img class="card-img-top img-fluid" src="' + book.bookCover + '" alt="' + book.title + '">' +
-                        '<div class="card-body text-center">' +
-                            '<h5>' + book.title + '</h5>' +
-                            '<p class="card-text">' + 'By: ' + book.author + '</p>' +
-                            '<p class="card-text">' + book.meetUpLocation + '</p>' +
-                            // '<a data-toggle="modal" href="#' + name + 'Modal" class="card-link">Learn about ' + name + '</a>' +
-                        '</div>' +
-                        '<div class="card-footer text-center">' + book.meetUpDate + '</div>' +
-                    '</div>';
-            
-            $('#bookCard').append(card);
-        }
-
-        // All books appear on page when first loaded
-        createBookCards(books);
-
-        // filters cards on the page based on button selection
-        $('.dropdown-item').click(function(){
-            var bookGenre = $(this).text();
-            if (bookGenre === "All"){
-                $('#bookCard').empty();
-                $('.genreHeader').text("All Books");
-                createBookCards(books);
-            } else {
-                var filteredBooks = books.filter(function (val){
-                    return val.genre === bookGenre; 
-                })
-                $('#bookCard').empty();
-                $('.genreHeader').text(bookGenre);
-                createBookCards(filteredBooks);
-            }; 
-        
+    // loops through book array, then calls buildBookCard function to create book cards
+    function createBookCards (listOfBooks){
+        listOfBooks.forEach(function(book){
+            buildBookCard(book);
         });
+
+    };
+
+    // Creates card elements for bookcards 
+    function buildBookCard(book){
+        var card = '<div class="card border-dark mb-3">' + 
+                    '<img class="card-img-top img-fluid" src="' + book.bookCover + '" alt="' + book.title + '">' +
+                    '<div class="card-body text-center">' +
+                        '<h5>' + book.title + '</h5>' +
+                        '<p class="card-text">' + 'By: ' + book.author + '</p>' +
+                        '<p class="card-text">' + book.meetUpLocation + '</p>' +
+                        // '<a data-toggle="modal" href="#' + name + 'Modal" class="card-link">Learn about ' + name + '</a>' +
+                    '</div>' +
+                    '<div class="card-footer text-center">' + book.meetUpDate + '</div>' +
+                '</div>';
+        
+        $('#bookCard').append(card);
+    }
+
+    // All books appear on page when first loaded
+    createBookCards(books);
+
+    // filters cards on the page based on button selection
+    $('.dropdown-item').click(function(){
+        var bookGenre = $(this).text();
+        if (bookGenre === "All"){
+            $('#bookCard').empty();
+            $('.genreHeader').text("All Books");
+            createBookCards(books);
+        } else {
+            var filteredBooks = books.filter(function (val){
+                return val.genre === bookGenre; 
+            })
+            $('#bookCard').empty();
+            $('.genreHeader').text(bookGenre);
+            createBookCards(filteredBooks);
+        }; 
+    
+    });
+
+    // Changes text of dropdown list button based on selection
+    $('.dropdown-menu').on('click', 'a', function (){
+        var genreSelection = $(this).text();
+        $('#dropdownMenuLink').text(genreSelection);
+    })
+
+    
     
 
 

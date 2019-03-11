@@ -435,13 +435,16 @@
 
 // ]
 
+// fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
+//     return response.json()
+//     })
+//     .then(function(books) {
+//         myglobalvarbooks = books
+// })
+
 fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
-    return response.json()
-    })
-    .then(function(books) {
-        myglobalvarbooks = books
-})
-    
+    return response.json();}).then(function(books) {
+        console.log(books);})
 
 
     // appends book array to #bookCard element in HTML

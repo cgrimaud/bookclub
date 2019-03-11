@@ -440,7 +440,7 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
     })
     .then(function(books) {
         myglobalvarbooks = books
-})
+
     
 
 
@@ -509,6 +509,6 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
     // loop through array, count number of objects, r
     
 
-
+})
 
 

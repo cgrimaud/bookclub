@@ -448,6 +448,10 @@
 //         console.log(myGlobalBooksVar);
 //     })
 
+
+// This is the global var books
+var books = [];
+
     function getBooks() {
         return fetch("https://cgrimaud.github.io/bookclub/books.json")
             .then(function(response) {return response.json();})
@@ -456,8 +460,10 @@
    
     function init() {
         getBooks().then(function(books) {
+            // We are assigning the value returned by getbooks to
+            // to the global var books
             this.books = books;
-            $('#bookCard').append(books);
+
             // All books appear on page when first loaded
             createBookCards(books);
             countBooks(books);

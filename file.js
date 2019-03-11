@@ -454,11 +454,15 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
             .then(function(books) {console.log(books);})
     }
 
-    // appends book array to #bookCard element in HTML
+   
     function init() {
         getBooks().then(function(books) {
             myGlobalBooksVar = books;
             $('#bookCard').append(books);
+            // All books appear on page when first loaded
+            createBookCards(books);
+            countBooks(books);
+
         });
     }
 
@@ -491,9 +495,7 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
         $('.genreBooksRead').text(book.length + " book");
     }
 
-    // All books appear on page when first loaded
-    createBookCards(books);
-    countBooks(books);
+
 
 
     // filters cards on the page based on button selection

@@ -39,7 +39,6 @@ var books = [];
                         '<h5>' + book.title + '</h5>' +
                         '<p class="card-text">' + 'By: ' + book.author + '</p>' +
                         '<p class="card-text">' + book.meetUpLocation + '</p>' +
-                        // '<a data-toggle="modal" href="#' + name + 'Modal" class="card-link">Learn about ' + name + '</a>' +
                     '</div>' +
                     '<div class="card-footer text-center">' + book.meetUpDate + '</div>' +
                 '</div>';

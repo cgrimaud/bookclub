@@ -442,13 +442,26 @@
 //         myglobalvarbooks = books
 // })
 
+// fetch books.json
 fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
     return response.json();}).then(function(books) {
-        console.log(books);})
+        console.log(books);
+    })
 
+    function getBooks() {
+        return fetch("https://cgrimaud.github.io/bookclub/books.json")
+            .then(function(response) {return response.json();})
+            .then(function(books) {console.log(books);})
+    }
 
     // appends book array to #bookCard element in HTML
-    $('#bookCard').append(books);
+    function init() {
+        getBooks().then(function(books) {
+            myGlobalBooksVar = books;
+            $('#bookCard').append(books);
+        });
+    }
+
 
     // loops through book array, then calls buildBookCard function to create book cards
     function createBookCards (listOfBooks){
@@ -509,7 +522,7 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
         $('#dropdownMenuLink').text(genreSelection);
     })
 
-    // loop through array, count number of objects, r
+    init();
     
 
 

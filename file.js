@@ -460,9 +460,11 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
             myGlobalBooksVar = books;
             $('#bookCard').append(books);
             // All books appear on page when first loaded
-            
+            createBookCards(books);
+            countBooks(books);
 
- 
+        });
+    }
 
 
     // loops through book array, then calls buildBookCard function to create book cards
@@ -493,8 +495,6 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
         $('.genreBooksRead').text(book.length + " book");
     }
 
-    createBookCards(books);
-    countBooks(books);
 
 
     // filters cards on the page based on button selection
@@ -522,8 +522,7 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
         var genreSelection = $(this).text();
         $('#dropdownMenuLink').text(genreSelection);
     })
-    });
-}
+
     init();
     
 

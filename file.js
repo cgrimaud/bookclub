@@ -444,8 +444,8 @@
 
 // fetch books.json
 fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
-    return response.json();}).then(function(books) {
-        console.log(books);
+    return response.json();}).then(function(myGlobalBooksVar) {
+        console.log(myGlobalBooksVar);
     })
 
     function getBooks() {
@@ -456,8 +456,8 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
 
    
     function init() {
-        getBooks().then(function(books) {
-            myGlobalBooksVar = books;
+        getBooks().then(function(myGlobalBooksVar) {
+            books = myGlobalBooksVar;
             $('#bookCard').append(books);
             // All books appear on page when first loaded
             createBookCards(books);
@@ -465,7 +465,8 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
 
         });
     }
-
+    
+    init();
 
     // loops through book array, then calls buildBookCard function to create book cards
     function createBookCards (listOfBooks){
@@ -523,7 +524,7 @@ fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) 
         $('#dropdownMenuLink').text(genreSelection);
     })
 
-    init();
+ 
     
 
 

@@ -443,21 +443,20 @@
 // })
 
 // fetch books.json
-fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
-    return response.json();}).then(function(myGlobalBooksVar) {
-        console.log(myGlobalBooksVar);
-    })
+// fetch("https://cgrimaud.github.io/bookclub/books.json").then(function(response) {
+//     return response.json();}).then(function(myGlobalBooksVar) {
+//         console.log(myGlobalBooksVar);
+//     })
 
     function getBooks() {
         return fetch("https://cgrimaud.github.io/bookclub/books.json")
             .then(function(response) {return response.json();})
-            .then(function(books) {console.log(books);})
     }
 
    
     function init() {
-        getBooks().then(function(myGlobalBooksVar) {
-            books = myGlobalBooksVar;
+        getBooks().then(function(books) {
+            this.books = books;
             $('#bookCard').append(books);
             // All books appear on page when first loaded
             createBookCards(books);

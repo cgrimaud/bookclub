@@ -2,6 +2,9 @@
 // This is the global var books
 var books = [];
 
+    require('es6-promise').polyfill();
+    require('isomorphic-fetch');
+
     function getBooks() {
         return fetch("https://cgrimaud.github.io/bookclub/books.json")
             .then(function(response) {return response.json();})

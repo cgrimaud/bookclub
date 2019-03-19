@@ -1,5 +1,3 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 
 
 // This is the global var books

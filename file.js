@@ -3,19 +3,20 @@
 // This is the global var books
 var books = [];
 
+    function loadJSON(callback) {
+        var xobj = new XMLHttpRequest();
+        xobj.open('GET', 'books.json', true); 
+        xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+          }
+        };
+        xobj.send(null);
+      }
 
-
-    function getBooks() {
-        return fetch("https://cgrimaud.github.io/bookclub/books.json")
-            .then(function(response) {return response.json();})
-    }
-
-   
-    function init() {
-        getBooks().then(function(books) {
-            // We are assigning the value returned by getbooks to
-            // to the global var books
-            this.books = books;
+      function init() {
+        loadJSON(function(response) {
+            books = JSON.parse(response)
 
             // All books appear on page when first loaded
             createBookCards(books);

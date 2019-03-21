@@ -1,16 +1,21 @@
 
 # Book Club Website
 
-I am in a book club that has been reading and meeting since 2012. This website is a record of all of the books we've read as well as the date and location we met to discuss them.
+I am in a book club that has been reading and meeting since 2012. This website is a record of all of the books we've read as well as the dates and locations we met to discuss them.
 
 ### To test this website:
 
 The website is hosted on GitHub pages, so the easiest way to review it would be to [check it out here.](https://cgrimaud.github.io/bookclub/#). 
 
 
+#### If you want to download and test locally:
+
+You will need some sort of local server in order to load the JSON file. I used [this npm package](https://www.npmjs.com/package/local-web-server) with great success.
+
+
 ### What to expect:
 
-I created this website to practice using bootstrap, jQuery, dynamically inserting elements into HTML, and working with a JSON array (also, because it's really cool to see our bookclub history!).
+I created this website to practice using bootstrap, jQuery, dynamically inserting elements into HTML, and working with a JSON array (also, because it's really cool to see our bookclub history).
 
 The books and details are placed into dynamically generated cards and can be minimally filtered based on genre selection from a drop-down menu. 
 
